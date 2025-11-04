@@ -46,4 +46,38 @@ It enables real-time bus tracking, ETA prediction, demand forecasting, and route
 
 ## 📂 Project Structure
 
+SmartTrack-AI/
+├── backend/
+│ ├── app.py # Flask server entry point
+│ ├── models/ # Trained ML models (.pkl)
+│ ├── routes/ # Route and stop data (JSON)
+│ ├── utils/ # Helper functions (GPS, ETA, etc.)
+│ ├── static_data/ # Traffic data
+│ └── requirements.txt
+│
+├── frontend/
+│ ├── index.html # Homepage
+│ ├── live_map.html # Real-time map UI
+│ ├── admin_dashboard.html # Admin panel
+│ ├── assets/
+│ │ ├── css/style.css
+│ │ ├── js/ (map.js, eta_predict.js, etc.)
+│ │ └── images/
+│
+├── database/
+│ ├── buses.db
+│ ├── bus_live_data.csv
+│ └── past_trip_history.csv
+│
+├── ml training/
+│ ├── train_eta_model.ipynb
+│ ├── train_demand_model.ipynb
+│ ├── train_delay_model.ipynb
+│ ├── data_preprocessing.py
+│ └── model_evaluation.py
+│
+└── README.md
+
+
+
 
