@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Route Details - SmartTrack AI</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="card" data-aos="fade-up">
+    <h2>Route Details</h2>
+    <select id="routeSelect" class="btn">
+      <option>Select a Route</option>
+      <option>Route 101 - City Center</option>
+      <option>Route 102 - Airport</option>
+      <option>Route 103 - Industrial Zone</option>
+    </select>
+
+    <div id="routeInfo" style="margin-top:1.5rem;">
+      <p>Select a route to view stop details and estimated timings.</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("routeSelect").addEventListener("change", (e) => {
+      const route = e.target.value;
+      document.getElementById("routeInfo").innerHTML = `
+        <h3>${route}</h3>
+        <ul>
+          <li>Stop 1 – Departure</li>
+          <li>Stop 2 – Downtown</li>
+          <li>Stop 3 – Terminus</li>
+        </ul>
+      `;
+    });
+  </script>
+</body>
+</html>

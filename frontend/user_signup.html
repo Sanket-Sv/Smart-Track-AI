@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Signup - SmartTrack AI</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/validation.js"></script>
+</head>
+<body>
+  <div class="card" data-aos="fade-up">
+    <h2>Create Account</h2>
+    <form onsubmit="return validateSignup()">
+      <input type="text" id="name" placeholder="Full Name" required><br><br>
+      <input type="email" id="email" placeholder="Email" required><br><br>
+      <input type="password" id="password" placeholder="Password" required><br><br>
+      <button class="btn" type="submit">Sign Up</button><br>
+      <p>Already registered? <a href="user_login.html">Login</a></p>
+    </form>
+  </div>
+</body>
+</html>

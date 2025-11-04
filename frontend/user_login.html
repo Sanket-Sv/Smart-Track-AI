@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Login - SmartTrack AI</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/validation.js"></script>
+</head>
+<body>
+  <div class="card" data-aos="zoom-in">
+    <h2>User Login</h2>
+    <form onsubmit="return validateLogin()">
+      <input type="email" id="email" placeholder="Email" required><br><br>
+      <input type="password" id="password" placeholder="Password" required><br><br>
+      <button class="btn" type="submit">Login</button><br>
+      <p>New user? <a href="user_signup.html">Sign Up</a></p>
+    </form>
+  </div>
+</body>
+</html>
