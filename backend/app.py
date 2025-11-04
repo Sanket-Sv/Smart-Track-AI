@@ -1,3 +1,4 @@
+import os
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import joblib
@@ -12,15 +13,20 @@ from utils.route_optimizer import optimize_route
 app = Flask(__name__)
 CORS(app)
 
-# Load Models
-eta_model = joblib.load("models/eta_model.pkl")
-demand_model = joblib.load("models/demand_model.pkl")
-delay_model = joblib.load("models/delay_detector.pkl")
+# --- 🔧 Dynamic path fix ---
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODELS_DIR = os.path.join(BASE_DIR, "models")
+ROUTES_DIR = os.path.join(BASE_DIR, "routes")
 
-# Routes Data
-with open("routes/bus_routes.json") as f:
+# --- Load Models Safely ---
+eta_model = joblib.load(os.path.join(MODELS_DIR, "eta_model.pkl"))
+demand_model = joblib.load(os.path.join(MODELS_DIR, "demand_model.pkl"))
+delay_model = joblib.load(os.path.join(MODELS_DIR, "delay_detector.pkl"))
+
+# --- Load Routes Data ---
+with open(os.path.join(ROUTES_DIR, "bus_routes.json")) as f:
     routes = json.load(f)
-with open("routes/stops.json") as f:
+with open(os.path.join(ROUTES_DIR, "stops.json")) as f:
     stops = json.load(f)
 
 
